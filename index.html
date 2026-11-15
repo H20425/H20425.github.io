@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Hoomehr Mangoli</title>
+<meta name="description" content="Electronics and hardware projects by Hoomehr Mangoli, Engineering Physics at SFU.">
+<meta property="og:title" content="Hoomehr Mangoli">
+<meta property="og:description" content="Electronics and hardware projects: PCB design, power electronics, embedded systems.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/soccer-motherboard.jpg">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='white'%3EHM%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fafaf8; --surface:#ffffff; --ink:#16181d; --muted:#5b616e; --line:#e4e4e0;
+  --accent:#c2410c; --accent-soft:#fdeee6; --ph:#eceae4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115; --surface:#171a20; --ink:#e9eaee; --muted:#9aa1ad; --line:#262a33;
+    --accent:#fb923c; --accent-soft:#2a1b12; --ph:#20242c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#171a20; --ink:#e9eaee; --muted:#9aa1ad; --line:#262a33;
+  --accent:#fb923c; --accent-soft:#2a1b12; --ph:#20242c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+img{display:block;max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .name{font-weight:700;letter-spacing:.2px;text-decoration:none;color:var(--ink)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:15px}
+nav ul a:hover{color:var(--ink)}
+header{padding:72px 0 40px}
+.kicker{font:600 13px/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.1;margin:14px 0 16px;letter-spacing:-.02em}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:660px;margin:0}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+section{padding:36px 0}
+h2{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+.sec-sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:20px}
+.card>*,.grid>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.card.wide.textonly{grid-template-columns:1fr}
+@media (max-width:760px){.card.wide{grid-template-columns:minmax(0,1fr)}}
+.media{background:#ececec;display:grid;gap:2px;grid-template-columns:minmax(0,1fr);align-content:center}
+.media img{width:100%;height:100%;object-fit:contain;aspect-ratio:4/3;background:#ececec}
+.media img.fill{object-fit:cover}
+.media.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.media.two img{aspect-ratio:1/1}
+.media.two.tall img{aspect-ratio:3/4}
+.card.wide.stack{grid-template-columns:minmax(0,1fr)}
+.media.strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+.media.strip img{aspect-ratio:1/1}
+.media.strip img.full{grid-column:1/-1;aspect-ratio:1600/455}
+@media (max-width:560px){.media.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px}
+.body h3{margin:0;font-size:18px}
+.body .meta{font:500 13px/1.3 ui-monospace,Consolas,monospace;color:var(--muted)}
+.body p{margin:0;color:var(--muted);font-size:15px}
+.body ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tag{font:500 12px/1 ui-monospace,Consolas,monospace;background:var(--accent-soft);color:var(--accent);padding:5px 8px;border-radius:5px}
+.stat{font-weight:700;color:var(--ink)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 12px}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:560px){nav ul{gap:14px}header{padding:48px 0 28px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="name" href="#top">Hoomehr Mangoli</a>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#team">Team work</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div></nav>
+
+<header id="top"><div class="wrap">
+  <div class="kicker">Engineering Physics · SFU</div>
+  <h1>I design and build electronics that get used.</h1>
+  <p class="lede">PCB, firmware, and the connections between the two. I made a plating thickness detector used daily on the production line, the electronics for the SFU Robot Soccer Team, and the power board and flexible electrode bands for a muscle-sensing wristband.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See projects</a>
+    <a class="btn" href="https://www.linkedin.com/in/hoomehr-mangoli/" rel="noopener">LinkedIn</a>
+  </div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sec-sub">Things I designed and built myself.</p>
+
+  <div class="grid">
+    <article class="card wide textonly">
+      <div class="body">
+        <h3>Electroplating thickness monitor</h3>
+        <div class="meta">2024 – 2025</div>
+        <p>Plating thickness is usually checked after a run, when it's too late to fix. I researched ways to track it during the run, then designed a board that measures plating current over time and uses Faraday's law to estimate deposit thickness in real time.</p>
+        <p>I built three versions: Arduino-based, ESP-based and fully analog. After testing with the people who run the line and fixing what they found, I built <span class="stat">four units</span> of the improved board. All four are in daily production use.</p>
+        <div class="tags"><span class="tag">current sensing</span><span class="tag">Arduino</span><span class="tag">ESP</span><span class="tag">analog design</span><span class="tag">PCB</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media"><img src="img/rf-sweep-3d.jpg" alt="3D view of the RF sweep generator board in KiCad, with three SMA connectors and USB-C" loading="lazy" width="1600" height="1200"></div>
+      <div class="body">
+        <h3>RF sweep generator / scalar network analyzer</h3>
+        <div class="meta">2026 · rev A</div>
+        <p>35 MHz – 4.4 GHz Sweep Generator and Scalar Network Analyzer for testing filters, amplifiers, and cables. Synthesized by an ADF4351 PLL synthesizer; amplified by GVA-84+ amplifier and attenuated by HMC624A step attenuator (levelled from -16 to +4.7 dBm); measured by AD8318 logarithmic detector with 16-bit ADC of input level. 4-layer PCB with 50 Ω coplanar waveguide, PLL loop simulation, phase noise, RF budget calculations, RP2040 firmware, and Python application.</p>
+        <div class="tags"><span class="tag">RF</span><span class="tag">KiCad</span><span class="tag">mixed-signal</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media"><img src="img/bench-supply-3d.jpg" alt="3D view of the 100 W bench supply board in KiCad, with XT60 and USB-C inputs and output terminal" loading="lazy" width="1600" height="1200"></div>
+      <div class="body">
+        <h3>100 W buck-boost bench supply</h3>
+        <div class="meta">2026 · rev A</div>
+        <p>Power Supply 0-30V 0-5A from 5-36V or USB-C Power Delivery. Uses an LT8390 4-switch buck-boost converter at 300 kHz driving an LC filter, with CV / CC control, hardware over-voltage protection, two INA228 power monitor ICs, and an RP2040 with a 2-inch LCD and potentiometers. Simulations are carried out using complete LTspice simulation environment; 4 layers.</p>
+        <div class="tags"><span class="tag">power electronics</span><span class="tag">buck-boost</span><span class="tag">USB-C PD</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media"><img class="fill" src="img/wafer.jpg" alt="Silicon wafer with fabricated devices, held with tweezers under cleanroom yellow light" loading="lazy" width="1536" height="1270"></div>
+      <div class="body">
+        <h3>Silicon wafer fabrication</h3>
+        <div class="meta">ENSC 495 · cleanroom</div>
+        <p>Starting from a bare silicon wafer, I made diodes, transistors and other test circuits through oxidation, diffusion, photolithography, thin-film deposition and etching, then tested the devices.</p>
+        <div class="tags"><span class="tag">microfabrication</span><span class="tag">photolithography</span><span class="tag">cleanroom</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="body">
+        <h3>Pulsed hydrogen laser</h3>
+        <div class="meta">ENSC 470 · 2023</div>
+        <ul>
+          <li>Electrolysis cell and gas filter producing 99% pure hydrogen, plus the hydrogen discharge tube. I got the tube running and observed the hydrogen emission spectrum.</li>
+          <li>30 kV pulsed high-voltage supply with a timing circuit that fires the tube through a spark gap for consistent pulse energy.</li>
+          <li>3D printed cavity enclosure with adjustable mirror and tube mounts.</li>
+        </ul>
+        <div class="tags"><span class="tag">high voltage</span><span class="tag">pulsed power</span><span class="tag">optics</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media"><img src="img/multimeter.jpg" alt="Wireless multimeter prototype: NodeMCU on perfboard with test leads and battery pack" loading="lazy" width="1600" height="1507"></div>
+      <div class="body">
+        <h3>Wireless digital multimeter</h3>
+        <div class="meta">2024</div>
+        <p>Measures voltage, current and resistance on a NodeMCU and streams live readings and waveforms over Wi-Fi to an Android app I wrote in Kotlin.</p>
+        <div class="tags"><span class="tag">ESP8266</span><span class="tag">Kotlin</span><span class="tag">Wi-Fi</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media two">
+        <img class="fill" src="img/dehydrator-controller.jpg" alt="Dehydrator controller: Arduino Nano and three 7-segment digits on a perfboard, with the temperature probe and power leads" loading="lazy" width="1200" height="1200">
+        <img class="fill" src="img/dehydrator-mounted.jpg" alt="The controller taped inside the dehydrator enclosure, display reading 30" loading="lazy" width="1200" height="1200">
+      </div>
+      <div class="body">
+        <h3>Dehydrator temperature controller</h3>
+        <div class="meta">2022</div>
+        <p>Arduino thermometer with a custom multiplexed 7 segment display. Button for setting temperature, output signal for controlling dehydrator fan speed. I built the dehydrator enclosure around it for constant-temperature drying.</p>
+        <div class="tags"><span class="tag">Arduino</span><span class="tag">interrupts</span><span class="tag">temperature</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="body">
+        <h3>FPGA digital design</h3>
+        <div class="meta">ENSC 252</div>
+        <p>Synthesizable VHDL for combinational and sequential logic, simulated and then run on an Altera Cyclone IV FPGA in Quartus.</p>
+        <div class="tags"><span class="tag">VHDL</span><span class="tag">Quartus</span><span class="tag">Cyclone IV</span></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="team"><div class="wrap">
+  <h2>Team work</h2>
+  <p class="sec-sub">Hardware I've built with teams, and my part in it.</p>
+
+  <div class="grid">
+    <article class="card wide">
+      <div class="media two">
+        <img src="img/soccer-motherboard.jpg" alt="Round robot motherboard, Rev D, with ATSAME70 controller and daughter-card slots" loading="lazy" width="1600" height="1554">
+        <img src="img/soccer-assembled.jpg" alt="Robot motherboard with daughter cards installed and wired" loading="lazy" width="1410" height="1600">
+      </div>
+      <div class="body">
+        <h3>SFU Robot Soccer: Head of Electronics</h3>
+        <div class="meta">Nov 2024 – present</div>
+        <p>Our autonomous robots run on an ATSAME70 motherboard with plug-in daughter cards for the motor drivers, kicker, RF, sensors and power.</p>
+        <ul>
+          <li>I lead the electronics team and troubleshoot and repair every board, with a focus on the kicker and motor board.</li>
+          <li>Replaced the motherboard's ATSAME70 in both TQFP and BGA packages, and made other board-level fixes.</li>
+          <li>Build the robots' wiring with crimped Molex-style connectors.</li>
+        </ul>
+        <div class="tags"><span class="tag">board repair</span><span class="tag">BGA rework</span><span class="tag">motor drivers</span><span class="tag">cabling</span></div>
+      </div>
+    </article>
+
+    <article class="card wide stack">
+      <div class="media strip">
+        <img class="full" src="img/opal-flex-band.jpg" alt="Opal flexible electrode band, two rows of electrode pads and a long flex tail" loading="lazy" width="1600" height="455">
+        <img class="fill" src="img/opal-power-board-3d.jpg" alt="3D view of the first Opal power board design in KiCad" loading="lazy" width="1600" height="1145">
+        <img src="img/opal-power-board.jpg" alt="Opal power board with USB-C, battery connector and header" loading="lazy" width="1600" height="1240">
+        <img src="img/opal-motherboard.jpg" alt="Opal motherboard with ESP32-S3 module, ADC chip and two flex connectors" loading="lazy" width="1565" height="1600">
+        <img src="img/opal-testbench-v1.jpg" alt="First version of the ADS1298 test-bench boards" loading="lazy" width="1600" height="1226">
+      </div>
+      <div class="body">
+        <h3>Opal: muscle-sensing wristband for skiers</h3>
+        <div class="meta">Capstone (ENSC 405W/440) · team of 5 · 2026</div>
+        <p>Skiers can't reach their phone through gloves and layers. Opal reads forearm muscle signals (sEMG) and sends Bluetooth media commands like skip, play/pause and volume up and down.</p>
+        <ul>
+          <li>I designed the power board (Li-ion charging, fuel gauge, buck-boost regulation) and the 2-layer flex electrode bands in KiCad, and co-designed the 4-layer ESP32-S3 + ADS1298 motherboard with the team.</li>
+          <li>Before the compact design we designed and built a test bench of ADS1298 boards (first version in picture) to prove the design works.</li>
+          <li>On one charge of a 1000 mAh cell the system ran <span class="stat">9 h 52 min</span> in a freezer at about -20 °C, against an 8 h target.</li>
+        </ul>
+        <div class="tags"><span class="tag">flex PCB</span><span class="tag">power design</span><span class="tag">KiCad</span><span class="tag">ESP32-S3</span><span class="tag">BLE</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="media two tall">
+        <img src="img/smart-bottle-front.jpg" alt="Clear 3D printed smart bottle with a character LCD mounted near the base" loading="lazy" width="750" height="1000">
+        <img src="img/smart-bottle-side.jpg" alt="Smart bottle from another angle, showing the electronics housing beside the LCD and sensor wires along the tube" loading="lazy" width="750" height="1000">
+      </div>
+      <div class="body">
+        <h3>Digital smart bottle</h3>
+        <div class="meta">ENSC 100W · 2023</div>
+        <p>I led a group of seven individuals in making a smart bottle that monitors the amount of water consumed as well as reminds one to consume water. The design of the 3D-printed flow meter, which contains an encoder, was done by me, along with the coding of the firmware.</p>
+        <div class="tags"><span class="tag">team lead</span><span class="tag">firmware</span><span class="tag">3D printing</span></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="about">
+    <div>
+      <p>I'm an Engineering Physics student at Simon Fraser University, finishing in December 2027.</p>
+      <p>I like hardware that has to work outside the lab in the real world and has useful applications.</p>
+    </div>
+    <div>
+      <div class="skills">
+        <span class="skill">PCB design</span><span class="skill">Flex PCB</span><span class="skill">KiCad</span><span class="skill">Altium</span><span class="skill">LTspice</span>
+        <span class="skill">Embedded C/C++</span><span class="skill">ESP32-S3</span><span class="skill">Arduino</span><span class="skill">VHDL / FPGA</span>
+        <span class="skill">Python</span><span class="skill">MATLAB</span><span class="skill">SMD and BGA rework</span><span class="skill">Cable assembly</span>
+        <span class="skill">Lab equipment</span><span class="skill">Fusion 360</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="sec-sub" style="margin:0">The best way to reach me is on <a href="https://www.linkedin.com/in/hoomehr-mangoli/" rel="noopener">LinkedIn</a>.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Hoomehr Mangoli · Vancouver, BC</span>
+</div></footer>
+
+
+
+</body></html>
