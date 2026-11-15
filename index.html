@@ -99,7 +99,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header id="top"><div class="wrap">
   <div class="kicker">Engineering Physics · SFU</div>
   <h1>I design and build electronics that get used.</h1>
-  <p class="lede">PCB, firmware, and the connections between the two. I made a plating thickness detector used daily on the production line, the electronics for the SFU Robot Soccer Team, and the power board and flexible electrode bands for a muscle-sensing wristband.</p>
+  <p class="lede">PCB, firmware, and the connections between the two. I made a plating thickness detector used daily on the production line, lead the electronics for the SFU Robot Soccer team, and designed the power board and flexible electrode bands for a muscle-sensing wristband.</p>
   <div class="cta">
     <a class="btn primary" href="#projects">See projects</a>
     <a class="btn" href="https://www.linkedin.com/in/hoomehr-mangoli/" rel="noopener">LinkedIn</a>
@@ -114,7 +114,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <article class="card wide textonly">
       <div class="body">
         <h3>Electroplating thickness monitor</h3>
-        <div class="meta">2024 – 2025</div>
+        <div class="meta">Jan 2025 – Aug 2025</div>
         <p>Plating thickness is usually checked after a run, when it's too late to fix. I researched ways to track it during the run, then designed a board that measures plating current over time and uses Faraday's law to estimate deposit thickness in real time.</p>
         <p>I built three versions: Arduino-based, ESP-based and fully analog. After testing with the people who run the line and fixing what they found, I built <span class="stat">four units</span> of the improved board. All four are in daily production use.</p>
         <div class="tags"><span class="tag">current sensing</span><span class="tag">Arduino</span><span class="tag">ESP</span><span class="tag">analog design</span><span class="tag">PCB</span></div>
@@ -126,7 +126,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="body">
         <h3>RF sweep generator / scalar network analyzer</h3>
         <div class="meta">2026 · rev A</div>
-        <p>35 MHz – 4.4 GHz Sweep Generator and Scalar Network Analyzer for testing filters, amplifiers, and cables. Synthesized by an ADF4351 PLL synthesizer; amplified by GVA-84+ amplifier and attenuated by HMC624A step attenuator (levelled from -16 to +4.7 dBm); measured by AD8318 logarithmic detector with 16-bit ADC of input level. 4-layer PCB with 50 Ω coplanar waveguide, PLL loop simulation, phase noise, RF budget calculations, RP2040 firmware, and Python application.</p>
+        <p>A sweep generator and scalar network analyzer covering 35 MHz to 4.4 GHz, for testing filters, amplifiers and cables. An ADF4351 PLL synthesizer makes the signal, a GVA-84+ amplifies it, and an HMC624A step attenuator sets the level from -16 to +4.7 dBm. On the input, an AD8318 log detector and a 16-bit ADC measure what comes back. It is a 4-layer board with 50 Ω coplanar waveguide traces. I simulated the PLL loop, phase noise and RF power budget, and wrote the RP2040 firmware and a Python app for the PC.</p>
         <div class="tags"><span class="tag">RF</span><span class="tag">KiCad</span><span class="tag">mixed-signal</span></div>
       </div>
     </article>
@@ -136,7 +136,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="body">
         <h3>100 W buck-boost bench supply</h3>
         <div class="meta">2026 · rev A</div>
-        <p>Power Supply 0-30V 0-5A from 5-36V or USB-C Power Delivery. Uses an LT8390 4-switch buck-boost converter at 300 kHz driving an LC filter, with CV / CC control, hardware over-voltage protection, two INA228 power monitor ICs, and an RP2040 with a 2-inch LCD and potentiometers. Simulations are carried out using complete LTspice simulation environment; 4 layers.</p>
+        <p>A 0–30 V, 0–5 A bench supply that runs from a 5–36 V input or USB-C Power Delivery. An LT8390 4-switch buck-boost converter at 300 kHz drives an LC filter, with CV/CC control and hardware over-voltage protection. Two INA228 power monitors measure voltage and current, and an RP2040 runs a 2-inch LCD and potentiometers. I verified the design in LTspice before laying out the 4-layer board.</p>
         <div class="tags"><span class="tag">power electronics</span><span class="tag">buck-boost</span><span class="tag">USB-C PD</span></div>
       </div>
     </article>
@@ -213,7 +213,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="meta">Nov 2024 – present</div>
         <p>Our autonomous robots run on an ATSAME70 motherboard with plug-in daughter cards for the motor drivers, kicker, RF, sensors and power.</p>
         <ul>
-          <li>I lead the electronics team and troubleshoot and repair every board, with a focus on the kicker and motor board.</li>
+          <li>I lead the electronics team and troubleshoot and repair every board, with a focus on the kicker and motor boards.</li>
           <li>Replaced the motherboard's ATSAME70 in both TQFP and BGA packages, and made other board-level fixes.</li>
           <li>Build the robots' wiring with crimped Molex-style connectors.</li>
         </ul>
@@ -250,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="body">
         <h3>Digital smart bottle</h3>
         <div class="meta">ENSC 100W · 2023</div>
-        <p>I led a group of seven individuals in making a smart bottle that monitors the amount of water consumed as well as reminds one to consume water. The design of the 3D-printed flow meter, which contains an encoder, was done by me, along with the coding of the firmware.</p>
+        <p>I led a team of seven on a smart bottle that tracks how much water you drink and reminds you to drink more. I designed the 3D printed flow meter, which uses an encoder, and wrote the firmware.</p>
         <div class="tags"><span class="tag">team lead</span><span class="tag">firmware</span><span class="tag">3D printing</span></div>
       </div>
     </article>
